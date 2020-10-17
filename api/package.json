@@ -1,0 +1,33 @@
+{
+  "name": "gcic-api",
+  "version": "1.0.0",
+  "description": "GCIC app node api",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.bundle.js",
+    "build": "webpack",
+    "dev": "nodemon ./server.js localhost 3080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathanbataire/gcic.git"
+  },
+  "author": "Jonathan Bataire",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonathanbataire/gcic/issues"
+  },
+  "homepage": "https://github.com/jonathanbataire/gcic#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "http-proxy-middleware": "^1.0.6",
+    "nodemon": "^2.0.5",
+    "webpack": "^5.1.3",
+    "webpack-cli": "^4.0.0"
+  }
+}
