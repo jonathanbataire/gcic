@@ -9,7 +9,7 @@ function Header (){
                 <a href="#default" className="logo">GroupLogo</a>
             </div>
             <div className="header-right">
-                <text>Doe, John owl philly</text>
+                <text>Doe, John</text>
                 <img className="profile" src={avatar} alt="avatar"/>
             </div>
             <div className="header-center">
