@@ -1,0 +1,39 @@
+.main {
+    /*border: 2px solid #000;*/
+    margin: 0px 5px 5px 5px;
+    /*background-color: lawngreen;*/
+    overflow: hidden;
+    vertical-align: middle;
+    padding-top: 5px;
+}
+
+.box{
+    
+    border: 2px solid #000;
+}
+
+.left {
+    float: left;
+    width: 59%;
+    padding: 3px;
+    /*border: 2px solid #000;*/
+}
+
+.stack {
+    float: right;
+    width: 40%;
+    /*border: 2px solid #000;*/
+}
+
+.stack div {
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 900px) {
+    .stack, .left {
+        float: none;
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}

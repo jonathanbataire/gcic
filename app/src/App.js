@@ -1,12 +1,14 @@
 import React from 'react';
-//import logo from './logo.svg';
+import Payment from './Components/Home';
 import Header from './Components/Header';
 import './App.css';
+import Home from './Components/Home';
 
 function App () {
     return (
         <div className="App">
-            <Header />
+            <Header/>
+            <Home/>
         </div>
     );
 }
