@@ -1,14 +1,16 @@
 import React from 'react';
-import Payment from './Components/Home';
-import Header from './Components/Header';
 import './App.css';
+import Header from './Components/Header';
 import Home from './Components/Home';
+import Footer from './Components/Footer'
+import Login from './Components/Login'
 
 function App () {
     return (
         <div className="App">
-            <Header/>
-            <Home/>
+            {/* <Header/> */}
+            {/* <Home/>*/}
+            <Login/>
         </div>
     );
 }
