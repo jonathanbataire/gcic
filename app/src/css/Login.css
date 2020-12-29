@@ -1,4 +1,25 @@
 .login {
     /*background-color: lawngreen;*/
-    border: 1px solid #000;
+    border: 0px solid #000;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
+
+.header {
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 7px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 0px; 
+    text-emphasis-color: black;
+  }
+
+  .blur {
+    background-color: rgba(255, 255, 255, .25);  
+    backdrop-filter: blur(5px);
+  }
+  .bg-img {
+    background-image: url("../img/doodle.jpg");
+    height: 625px;
+    text-align: center;
+
+  }

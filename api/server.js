@@ -1,11 +1,20 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const port = 3080;
 
 const users = ['a'];
 
+app.use(cors());
 app.use(bodyParser.json());
+
+app.post('/login', (req, res) => {
+  console.log(`login called....${JSON.stringify(req.body) }`);
+  res.send({
+    token: 'test123'
+  });
+});
 
 app.get('/', function (req, res) {
   res.send('gcic api');
