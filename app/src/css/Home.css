@@ -1,0 +1,18 @@
+.box{
+    
+    border: 1px solid lawngreen;
+}
+.bd {
+    border: 1px solid black;
+}
+
+.payment {
+    padding: 1% 0; 
+}
+
+
+.fill { 
+    background-color: rgb(153, 148, 148);
+    min-height: 560px;
+ }
+ 

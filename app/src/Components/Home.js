@@ -1,24 +1,23 @@
 import React from 'react';
-import '../css/Card.css'
+import '../css/Home.css'
 import PaymentRegistration from './PaymentRegistration'
 import Payments from './Payments'
 import Loans from './Loans'
+import { Col, Container, Row } from 'react-bootstrap';
 
 function Home (){
     return (
-        <div className="main">
-            <div className="left">
-                <PaymentRegistration/>
-            </div>
-            <div className="stack">
-                <div>
-                    <Payments/>
-                </div>
-                <div>
-                    <Loans/>
-                </div>
-            </div>
-        </div>
+        <Container className="" fluid>
+            <Row>
+                <Col className="" xs={12} md={7}> <PaymentRegistration /> </Col>
+                <Col xs={12} md={5}>
+                    <Row>
+                        <Col className="" sm={12}> <Payments /> </Col>
+                        <Col className="" sm={12}> <Loans /> </Col>
+                    </Row>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 

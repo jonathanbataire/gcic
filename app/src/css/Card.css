@@ -1,49 +1,28 @@
-.main {
-    /*border: 2px solid #000;*/
-    margin: 0px 5px 5px 5px;
-    /*background-color: lawngreen;*/
-    overflow: hidden;
-    vertical-align: middle;
-    padding-top: 5px;
+.card {
+    margin: "auto";
 }
 
-.box{
-    
-    border: 2px solid #000;
+.wrapper {
+    padding: 10px;
+    /*border: 1px solid black;*/
 }
 
-.left {
-    float: left;
-    width: 59%;
-    padding: 3px;
-    /*border: 2px solid #000;*/
+.card label{
+    font-style: italic;
+    font-weight: lighter bold;
 }
 
-.stack {
-    float: right;
-    width: 40%;
-    /*border: 2px solid #000;*/
-}
-/*.card {
-    overflow: hidden;
-    background-color: white;
-    width: 90%;
-    margin-left: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 10px;
-    margin: auto;
-    padding: 5px 5px 10px 5px;
-  }*/
-
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 10px;
-    padding: 100px;  
+.card .btn {
+    background-color:#007bff;
+    color: white;
+    width: 32%;
   }
 
-.stack div {
-    margin-bottom: 15px;
-}
+  .card p {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: medium;  
+  }
 
 @media screen and (max-width: 900px) {
     .stack, .left {

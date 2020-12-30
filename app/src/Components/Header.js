@@ -1,33 +1,40 @@
 import React from 'react';
 import '../css/Header.css';
-import Nav from '../Components/Nav'
+import Menu from './Menu'
 import avatar from '../avatar.png';
-import { Col, Container, Row, Image } from 'react-bootstrap';
+import { Col, Container, Row, Image,Nav, Navbar, NavDropdown,Dropdown, NavItem, DropdownButton  } from 'react-bootstrap';
+import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';
 
 function Header ({ logOut }){
+    
     return (
-        <Container fluid>
-            <Row className="header">
-                <Col className="logo" xs={5} md={4} sm={{ order: 'first' }}>
-                    GCIC-Logo
-                </Col>
-                <Col className="bd" xs={7} md={4} sm={{ order: 'last' }}>
-                    <Row className="right-sd">
-                        <Col className="user bd" sm={8} md={8}>Doe, John</Col>
-                        <Col className="bd" sm={4} md={2}>
-                            <Image className="profile" src={avatar} onClick={() => logOut()} roundedCircle/>
-                        </Col>
-                    </Row>
-                </Col>
-                <Col className="menu" xs={12} md={4} sm>
-                    <Row>
-                        <Col>Home</Col>
-                        <Col>Loans</Col>
-                        <Col >Records</Col>
-                    </Row>
-                </Col>
-            </Row>
-        </Container>
+        
+        <Navbar className="shadow" sticky="top" collapseOnSelect expand="md" bg="dark" variant="dark">
+            <Navbar.Brand href="#home">Gold Crest Investment Club</Navbar.Brand>
+               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+               <Navbar.Collapse id="responsive-navbar-nav">
+                 <Nav className="mr-auto" defaultActiveKey="#home">
+                   <Nav.Link href="#home">Home</Nav.Link>
+                   <Nav.Link href="#payments">Payments</Nav.Link>
+                   <Nav.Link href="#loans">Loans</Nav.Link>
+                   <Nav.Link href="#inquiry">Inquiry</Nav.Link>
+                 </Nav>
+                 <Nav>
+                    <DropdownButton
+                        menuAlign="right"
+                        title={<Image src={avatar} className="profile" roundedCircle />}
+                        id="dropdown-menu-align-right"
+                        variant="dropdown"
+                    >
+                        <Dropdown.Header>Signed-in as: John Doe</Dropdown.Header>
+                        <Dropdown.Item eventKey="1">View profile</Dropdown.Item>
+                        <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item eventKey="4" onClick={logOut}>Sign out</Dropdown.Item>
+                    </DropdownButton>
+                 </Nav>
+            </Navbar.Collapse>
+        </Navbar>
     );
 }
 export default Header;

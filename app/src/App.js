@@ -15,9 +15,9 @@ function App () {
         window.location.reload(true);
     }
 
-    /*if(!token) {
+    if(!token) {
         return <Login setToken={setToken} />
-    }*/
+    }
 
     return (
         <div className="App">
@@ -28,7 +28,6 @@ function App () {
                 <Route path="/login"> <Login setToken={setToken}/> </Route>
             </Switch>                
             </BrowserRouter>
-            <Footer/>
         </div>
     );
 }
