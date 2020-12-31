@@ -28,6 +28,7 @@ function App () {
                 <Route path="/login"> <Login setToken={setToken}/> </Route>
             </Switch>                
             </BrowserRouter>
+            <Footer/>
         </div>
     );
 }

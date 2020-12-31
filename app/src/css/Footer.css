@@ -3,18 +3,14 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 20px;
+    height: 18px;
     background-color: black;
     text-decoration: white;
+    line-height: 18px;
 }
 
 .footer h7 {
     color: white;
-    font-size: 14px;
+    font-size: 0.8em;
 }
 
-@media screen and (max-width: 500px) {
-    .footer {
-        position: relative;
-    }
-}

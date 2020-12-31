@@ -7,7 +7,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 function Home (){
     return (
-        <Container className="" fluid>
+        <Container className="" >
             <Row>
                 <Col className="" xs={12} md={7}> <PaymentRegistration /> </Col>
                 <Col xs={12} md={5}>
