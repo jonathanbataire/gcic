@@ -15,9 +15,9 @@ function App () {
         window.location.reload(true);
     }
 
-    if(!token) {
+    /*if(!token) {
         return <Login setToken={setToken} />
-    }
+    }*/
 
     return (
         <div className="App">
