@@ -5,7 +5,7 @@ import Payments from './Payments';
 import Loans from './Loans';
 import useWindowDimensions from '../Hooks/useWindowDimensions';
 
-import { Button, Col, Collapse, Container, Row } from 'react-bootstrap';
+import { Col, Collapse, Container, Row } from 'react-bootstrap';
 
 function Home (){
     const [openPay, setOpenPay] = useState(false);
@@ -40,7 +40,7 @@ function Home (){
                     <Row>
                         <Col className="mobile">
                             <a
-                            href='#' style={{padding:'10px'}}
+                            href='#ref' style={{padding:'10px'}}
                             onClick={() => {setOpenPay(!openPay); setOpenLoan(false); }}
                             aria-controls="collapse-payments"
                             aria-expanded={openPay}
@@ -48,7 +48,7 @@ function Home (){
                                 payments
                             </a> 
                             <a
-                                href='#' style={{padding:'10px'}}
+                                href='#ref' style={{padding:'10px'}}
                                 onClick={() => {setOpenLoan(!openLoan); setOpenPay(false); }}
                                 aria-controls="collapse-loans"
                                 aria-expanded={openLoan}

@@ -6,7 +6,7 @@ function Footer (){
         <Container fluid>
         <Row className="footer">
             <Col xs={12}>
-                <h7>GCIC © 2020 - Gold Crest Investment Club</h7>
+                <p>GCIC © 2020 - Gold Crest Investment Club</p>
             </Col>
         </Row>
         </Container>

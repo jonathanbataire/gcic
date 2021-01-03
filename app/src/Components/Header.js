@@ -1,10 +1,8 @@
 import React from 'react';
 import '../css/Header.css';
-import Menu from './Menu'
 import avatar from '../avatar.png';
 import {getHome, getToken} from '../Services/authenticate.js'
-import { Col, Container, Row, Image,Nav, Navbar, NavDropdown,Dropdown, NavItem, DropdownButton  } from 'react-bootstrap';
-import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';
+import { Image,Nav, Navbar,Dropdown, DropdownButton  } from 'react-bootstrap';
 
 function Header ({ logOut }){
     const alerter= async()=> {const x = await getHome(); alert(JSON.stringify(x));};

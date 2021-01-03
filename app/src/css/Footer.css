@@ -7,9 +7,10 @@
     background-color: black;
     text-decoration: white;
     line-height: 18px;
+    text-align: center;
 }
 
-.footer h7 {
+.footer p {
     color: white;
     font-size: 0.8em;
 }

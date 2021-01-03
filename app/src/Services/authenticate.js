@@ -1,8 +1,12 @@
 const axios = require('axios');
 
 export async function getToken(credentials) {
-  const { data } = await axios.post(`/login`);
-  return data;
+  try {
+    const { data } = await axios.post(`/login`);
+    return data;
+  } catch (err) {
+    return { error: err };
+  }
 }
 
 export async function getHome(){

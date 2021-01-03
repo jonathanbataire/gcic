@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { getToken } from '../Services/authenticate'
 import '../css/Login.css';
 import { Container, Col, Row, Form, Button } from 'react-bootstrap';
 import Card from './Card';
-import Footer from './Footer'
+/*import Footer from './Footer'
 import PropTypes from 'prop-types';
+import cookie from 'react-cookies';*/
 
-function Login({ setToken }) {
+function Login({ login }) {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
-    const [remember, setRemember] = useState();
+    //const [remember, setRemember] = useState();
     const [validated, setValidated] = useState(false);
 
 
@@ -24,6 +25,7 @@ function Login({ setToken }) {
         return () => mounted = false;
       }, [])*/
 
+      
 
     const handleSubmit = async (event) => {
         const form = event.currentTarget;
@@ -31,11 +33,11 @@ function Login({ setToken }) {
             event.preventDefault();
             event.stopPropagation();
         } else {
-            const data = await getToken({
+            await getToken({
                 username,
                 password
             });
-            setToken();
+            
         }
 
         setValidated(true);
@@ -60,13 +62,13 @@ function Login({ setToken }) {
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId="remember">
-                <Form.Check type="checkbox" label="Remember me" onChange={e => setRemember(e.target.value)} />
+                <Form.Check type="checkbox" label="Remember me" disabled />
             </Form.Group>
             <Button variant="primary" type="submit">
                 Sign-in
             </Button><br />
             <p className="font-italic text-right">
-                <a href="#">forgot password?</a>
+                <a href="#ref">forgot password?</a>
             </p>
         </Form>
     );
@@ -87,8 +89,8 @@ function Login({ setToken }) {
 }
 
 
-Login.propTypes = {
+/*Login.propTypes = {
     setToken: PropTypes.func.isRequired
-}
+}*/
 
 export default Login;

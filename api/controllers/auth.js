@@ -17,7 +17,7 @@ function generateToken (_id, role){
 exports.login = function (req, res){
   const {auth, expToken} = generateToken('uuid', 'role');
   res.cookie('auth', auth, cookieOptions(true));
-  res.cookie('_xp', expToken, cookieOptions(false));
+  res.cookie('_xp', expToken, cookieOptions());
   res.json({name:'John Doe',role:'user' });
 };
 

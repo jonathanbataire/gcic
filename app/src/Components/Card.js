@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form,Button, Card,Col} from 'react-bootstrap'
+import {Card} from 'react-bootstrap'
 import '../css/Card.css'
 
 function CardCustom ({title,content,width}){

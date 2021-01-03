@@ -1,33 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './Components/Header';
 import Home from './Components/Home';
 import Footer from './Components/Footer';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Login from './Components/Login';
-import useToken from './Components/App/useToken';
+import cookie from 'react-cookies';
 
 function App () {
-    const {auth, setToken} = useToken();
+    const [auth, setAuth] = useState(false);
+
+    //alert(cookie.load('_xp'));
+
+    useEffect(() => { 
+        if(cookie.load('_xp')){
+            setAuth(true);
+        }
+    },[]);
 
     const logOut = ()=>{
-        localStorage.clear();
-        window.location.reload(true);
+        cookie.remove('_xp');
+        setAuth(false);
     }
 
     if(!auth) {
-        return <Login setToken={setToken} />
+        return <div><Login /> <Footer /></div>
     }
 
     return (
         <div className="App">
-            <Header logOut={logOut}/> 
+            <Header logOut={logOut}/>
             <BrowserRouter>
             <Switch>
-                <Route path="/"> <Home/> </Route>
+                <Route path="/"> <Home logOut={logOut}/> </Route>
+                <Route path="/login"> <Login/> </Route>
             </Switch>                
             </BrowserRouter>
-            <Footer/>
+            <Footer />
         </div>
     );
 }
