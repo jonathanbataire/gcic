@@ -8,16 +8,16 @@ import Login from './Components/Login';
 import useToken from './Components/App/useToken';
 
 function App () {
-    const {token, setToken} = useToken();
+    const {auth, setToken} = useToken();
 
     const logOut = ()=>{
         localStorage.clear();
         window.location.reload(true);
     }
 
-    /*if(!token) {
+    if(!auth) {
         return <Login setToken={setToken} />
-    }*/
+    }
 
     return (
         <div className="App">
@@ -25,7 +25,6 @@ function App () {
             <BrowserRouter>
             <Switch>
                 <Route path="/"> <Home/> </Route>
-                <Route path="/login"> <Login setToken={setToken}/> </Route>
             </Switch>                
             </BrowserRouter>
             <Footer/>

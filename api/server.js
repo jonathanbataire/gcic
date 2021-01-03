@@ -1,38 +1,18 @@
 const express = require('express');
-const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const port = 3080;
+const cookieParser = require('cookie-parser');
+const config = require('./config');
+const routes = require('./routes');
 
-const users = ['a'];
+const app = express();
 
 app.use(cors());
+app.use(cookieParser());
 app.use(bodyParser.json());
 
-app.post('/login', (req, res) => {
-  console.log(`login called....${JSON.stringify(req.body) }`);
-  res.send({
-    token: 'test123'
-  });
-});
+routes(app);
 
-app.get('/', function (req, res) {
-  res.send('gcic api');
-});
-
-app.get('/api/users', (req, res) => {
-  console.log('api/users called...');
-  res.json(users);
-});
-
-app.post('/api/user', (req, res)=> {
-  const user = req.body.user;
-  console.log('Adding user::::::::', user);
-  users.push(user);
-  res.json('user addedd');
-});
-
-
-app.listen(port, () => {
-  console.log(`Server listening on port::${port}`);
+app.listen(config.LISTEN_PORT, () => {
+  console.log(`Server listening on port:${config.LISTEN_PORT}`);
 });

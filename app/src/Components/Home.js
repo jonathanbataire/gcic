@@ -26,7 +26,7 @@ function Home (){
             );        
         }
         return (
-            <div>
+            <div className="center">
                 <Col className="" sm={12}> <Payments /> </Col>
                 <Col className="" sm={12}> <Loans /> </Col>
             </div>

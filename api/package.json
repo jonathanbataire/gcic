@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/jonathanbataire/gcic#readme",
   "dependencies": {
-    "body-parser": "^1.19.0"
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express-jwt": "^6.0.0",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
     "cors": "^2.8.5",

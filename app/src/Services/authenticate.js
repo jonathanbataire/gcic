@@ -1,11 +1,15 @@
- export async function getToken(credentials) {
-    return fetch('http://localhost:3080/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(credentials)
-    })
-      .then(data => data.json())
+const axios = require('axios');
+
+export async function getToken(credentials) {
+  const { data } = await axios.post(`/login`);
+  return data;
 }
-  
+
+export async function getHome(){
+  try {
+    const { data } = await axios.get(`/home`);
+    return data;
+  } catch (err) {
+    alert(err)
+  }
+};

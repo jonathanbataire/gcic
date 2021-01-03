@@ -1,21 +1,16 @@
 import { useState } from 'react';
+import cookie from 'react-cookies';
 
 export default function useToken() {
-  const getToken = () => {
-    const tokenString = localStorage.getItem('token');
-    const userToken = JSON.parse(tokenString);
-    return userToken?.token
-  };
 
-  const [token, setToken] = useState(getToken());
+  const [auth, setAuth] = useState();
 
-  const saveToken = userToken => {
-    localStorage.setItem('token', JSON.stringify(userToken));
-    setToken(userToken.token);
+  const setToken = ()=> {
+    setAuth(cookie.load('_xp'));
   };
 
   return {
-    setToken: saveToken,
-    token
+    setToken: setToken,
+    auth
   }
 }

@@ -2,11 +2,13 @@ import React from 'react';
 import '../css/Header.css';
 import Menu from './Menu'
 import avatar from '../avatar.png';
+import {getHome, getToken} from '../Services/authenticate.js'
 import { Col, Container, Row, Image,Nav, Navbar, NavDropdown,Dropdown, NavItem, DropdownButton  } from 'react-bootstrap';
 import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';
 
 function Header ({ logOut }){
-    
+    const alerter= async()=> {const x = await getHome(); alert(JSON.stringify(x));};
+    const alerter2= async()=> {const x = await getToken(); alert(JSON.stringify(x));};
     return (
         
         <Navbar className="shadow" sticky="top" collapseOnSelect expand="md" bg="dark" variant="dark">
@@ -27,8 +29,8 @@ function Header ({ logOut }){
                         variant="dropdown"
                     >
                         <Dropdown.Header>Signed-in as: John Doe</Dropdown.Header>
-                        <Dropdown.Item eventKey="1">View profile</Dropdown.Item>
-                        <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
+                        <Dropdown.Item eventKey="1" onClick={()=>alerter2()}>View profile</Dropdown.Item>
+                        <Dropdown.Item eventKey="2" onClick={()=>alerter()}>Another action</Dropdown.Item>
                         <Dropdown.Divider />
                         <Dropdown.Item eventKey="4" onClick={logOut}>Sign out</Dropdown.Item>
                     </DropdownButton>
